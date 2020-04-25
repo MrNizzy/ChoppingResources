@@ -1,0 +1,24 @@
+name: ChoppingResources
+version: ${project.version}
+main: com.mcnizzy.cr.plugin.ChoppingResources
+api-version: 1.13
+authors: [MrNizzy]
+description: This plugin is the first in Dev
+website: latinmania.xyz
+commands:
+  crhelp:
+    description: Help for use plugin
+    usage: /cr help
+    permission: cr.help
+  healthme:
+    description: Health a player
+    usage: /healthme
+    permission: cr.healthme
+  crversion:
+    description: plugin version
+    usage: /cr version
+    permission: cr.help.version
+  crreload:
+    description: Reload plugin config
+    usage: /crreload
+    permission: cr.admin

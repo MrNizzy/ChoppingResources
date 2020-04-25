@@ -1,0 +1,7 @@
+com\mcnizzy\cr\commands\help.class
+com\mcnizzy\cr\plugin\ChoppingResources.class
+com\mcnizzy\cr\commands\General.class
+com\mcnizzy\cr\commands\reload.class
+com\mcnizzy\cr\events\BlockBreak.class
+com\mcnizzy\cr\events\movement.class
+com\mcnizzy\cr\commands\healthme.class
