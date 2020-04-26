@@ -1,6 +1,6 @@
 Messages:
   t-console-exist: "No se puede ejecutar ese comando desde la consola."
-  t-reload-console: "El plugin se ha recargado correctamente."
+  t-reload-console: "The plugin has been successfully reloaded."
   t-spawn-exist: "&aEl spawn no existe aun."
   t-spawn: "&aTeletransportandote al spawn."
   t-setspawn: "&aEl spawn se ha modificado correctamente."
@@ -12,3 +12,4 @@ Messages:
   t-help-setspawn: "&aEstablece el spawn."
   t-help-spawn: "&aTe teletransporta al spawn."
   t-help-reload: "&aRecarga la configuracion del plugin."
+  t-error: "An error has occurred."

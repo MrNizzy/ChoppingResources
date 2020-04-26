@@ -6,6 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 
 public class reload implements CommandExecutor {
 
@@ -18,15 +19,17 @@ public class reload implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        FileConfiguration Messages = plugin.getMessages();
         if(command.getName().equalsIgnoreCase("crreload")){
 
             try {
                 plugin.reloadConfig();
-                Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN+"El plugin se ha recargado correctamente.");
+                sender.sendMessage(ChatColor.GREEN+
+                        Messages.getString("Messages.t-reload-console"));
 
                 return true;
             }catch (Exception e){
-                Bukkit.getConsoleSender().sendMessage(ChatColor.RED+"Ocurrió un error.");
+                sender.sendMessage(ChatColor.RED+Messages.getString("Messages.t-error"));
                 return true;
             }
         }

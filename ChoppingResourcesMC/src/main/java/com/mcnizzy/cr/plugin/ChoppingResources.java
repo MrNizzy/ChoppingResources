@@ -49,7 +49,7 @@ public final class ChoppingResources extends JavaPlugin {
 
     public void assignmentCommands(){
         //this.getCommand("cr").setExecutor(new General(this));
-        //this.getCommand("crreload").setExecutor(new reload(this));
+        getCommand("crreload").setExecutor(new reload(this));
         this.getCommand("healthme").setExecutor(new healthme());
     }
     public void registerEvents() {
@@ -64,6 +64,46 @@ public final class ChoppingResources extends JavaPlugin {
         if(!config.exists()) {
             this.getConfig().options().copyDefaults(true);
             saveConfig();
+        }
+    }
+
+    public FileConfiguration getMessages() {
+        if(messages == null){
+            reloadMessages();
+        }
+        return messages;
+    }
+
+    public void reloadMessages(){
+        if(messages == null){
+            messagesFile = new File(getDataFolder(),"messages.yml");
+        }
+        messages = YamlConfiguration.loadConfiguration(messagesFile);
+        Reader defConfigStream;
+        try{
+            defConfigStream = new InputStreamReader(this.getResource("messages.yml"),"UTF8");
+            if(defConfigStream != null){
+                YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
+                messages.setDefaults(defConfig);
+            }
+        }catch(UnsupportedEncodingException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void saveMessages(){
+        try{
+            messages.save(messagesFile);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void registerMessages(){
+        messagesFile = new File(this.getDataFolder(),"messages.yml");
+        if(!messagesFile.exists()){
+            this.getMessages().options().copyDefaults(true);
+            saveMessages();
         }
     }
 

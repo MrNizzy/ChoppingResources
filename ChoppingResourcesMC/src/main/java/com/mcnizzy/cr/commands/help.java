@@ -20,6 +20,7 @@ public class help implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        FileConfiguration Messages = plugin.getMessages();
         FileConfiguration Config = this.plugin.getConfig();
         if(!(sender instanceof Player)){
             if(args[0].equalsIgnoreCase("reload"));
