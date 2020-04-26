@@ -1,6 +1,7 @@
 package com.mcnizzy.cr.events;
 
 import com.mcnizzy.cr.plugin.ChoppingResources;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -18,6 +19,7 @@ public class BlockBreak implements Listener {
     public void Break(BlockBreakEvent event){
         Player player = event.getPlayer();
         Block block = event.getBlock();
+        Block bedrock;
         Location locationBlock = block.getLocation();
         Material material = block.getType();
         if(material.equals(Material.OAK_LOG)){
@@ -26,7 +28,7 @@ public class BlockBreak implements Listener {
             
 
         }
-        player.sendMessage(ChatColor.GREEN+"Has roto un bloque");
+        player.sendMessage(ChatColor.GREEN+"Working!");
 
     }
 }
